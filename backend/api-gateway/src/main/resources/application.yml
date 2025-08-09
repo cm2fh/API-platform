@@ -1,0 +1,48 @@
+server:
+  port: 8103
+
+spring:
+  application:
+    name: api-gateway
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      database: 2
+      timeout: 3000ms
+      lettuce:
+        pool:
+          max-active: 8
+          max-idle: 8
+          min-idle: 0
+  cloud:
+    gateway:
+      routes:
+        - id: api_route
+          uri: http://localhost:8102
+          predicates:
+            - Path=/api/**
+    sentinel:
+      transport:
+        dashboard: http://172.30.30.108:8858
+      eager: true # 是否立即初始化
+
+dubbo:
+  application:
+    name: dubbo-gateway
+  protocol:
+    name: dubbo
+    port: 22223
+  registry:
+    id: nacos-registry
+    address: nacos://172.30.30.108:8848
+
+gateway:
+  host: http://localhost:8103
+  ip-white-list:
+    - 127.0.0.1
+    - localhost
+    - 0:0:0:0:0:0:0:1
+
+
+
