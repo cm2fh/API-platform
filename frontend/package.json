@@ -1,0 +1,42 @@
+{
+  "name": "zyb-frontend",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 5173",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview",
+    "build-only": "vite build",
+    "type-check": "vue-tsc --build",
+    "lint": "eslint . --fix",
+    "format": "prettier --write src/"
+  },
+  "dependencies": {
+    "@ant-design/icons-vue": "^7.0.1",
+    "@element-plus/icons-vue": "^2.3.2",
+    "ant-design-vue": "^4.2.6",
+    "axios": "^1.10.0",
+    "pinia": "^3.0.3",
+    "vue": "^3.5.17",
+    "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
+    "@tsconfig/node22": "^22.0.2",
+    "@types/node": "^22.15.32",
+    "@vitejs/plugin-vue": "^5.1.1",
+    "@vue/eslint-config-prettier": "^9.0.0",
+    "@vue/eslint-config-typescript": "^13.0.0",
+    "@vue/tsconfig": "^0.7.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-vue": "^9.27.0",
+    "jiti": "^2.4.2",
+    "npm-run-all2": "^8.0.4",
+    "openapi-typescript-codegen": "^0.29.0",
+    "prettier": "3.5.3",
+    "typescript": "~5.8.0",
+    "vite": "^5.3.5",
+    "vite-plugin-vue-devtools": "^7.3.7",
+    "vue-tsc": "^2.2.10"
+  }
+}
